@@ -13,11 +13,22 @@ let comments = new Schema({
     },
     time:{
         type: Number,
+    },
+    email:{
+        type: String
+    },
+    address:{
+        type: String
+    },
+    serial:{
+        type: Number,
         unique: true
     },
-    id:{
-        type: Number,
-        unique: true 
+    status:{
+        type: Number
+    },
+    relation:{
+        type: Number
     }
 })
 

@@ -6,7 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var articleRouter = require('./routes/article')
+var articleRouter = require('./routes/article');
+var comments = require('./routes/comments')
 
 var mongoose = require('mongoose');
 var bodyParse = require('body-parser');
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/article', articleRouter);
+app.use('/comments', comments);
 // 连接服务器
 mongoose.connect('mongodb://localhost/blog')
 var db = mongoose.connection;
